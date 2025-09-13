@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Count from './component/count/index.svelte';
+  import Router from "svelte-spa-router";
+  import Home from "./route/home/index.svelte";
 
-  import './app.css';
+  const routes = {
+    "/": Home,
+  };
 </script>
 
-<main class="main-container">
-  <h1 class="main-title">Hello, Svelte!</h1>
-  <Count />
-</main>
+<Router {routes} />
