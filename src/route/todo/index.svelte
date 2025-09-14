@@ -15,6 +15,10 @@
       newTodo = "";
     }
   }
+
+  function removeTodo(id: number) {
+    todos = todos.filter((todo) => todo.id !== id);
+  }
 </script>
 
 <main class="todo-container">
@@ -32,6 +36,7 @@
         <input type="checkbox" bind:checked={todo.completed} />
         <span class:completed={todo.completed}>{todo.text}</span>
       </label>
+      <button on:click={() => removeTodo(todo.id)}>Remove</button>
     </li>
     {/each}
   </ul>
