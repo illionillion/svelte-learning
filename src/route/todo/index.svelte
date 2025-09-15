@@ -36,7 +36,7 @@
         <input type="checkbox" bind:checked={todo.completed} />
         <span class:completed={todo.completed}>{todo.text}</span>
       </label>
-      <button on:click={() => removeTodo(todo.id)}>Remove</button>
+      <button on:click={() => removeTodo(todo.id)} class="remove-button">Remove</button>
     </li>
     {/each}
   </ul>

@@ -41,3 +41,17 @@
   text-decoration: line-through;
   color: #888;
 }
+
+.remove-button {
+  background: #ef4444;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.remove-button:hover {
+  background: #dc2626;
+}
