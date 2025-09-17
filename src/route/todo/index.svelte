@@ -31,7 +31,6 @@
 <main class="todo-container">
   <h1 class="todo-title">Todo List</h1>
 
-
   <AddTodoForm {newTodo} onInput={handleInput} onAdd={addTodo} />
   <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
 

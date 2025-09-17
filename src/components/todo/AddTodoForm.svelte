@@ -6,5 +6,5 @@
 
 <form class="todo-input-area" on:submit|preventDefault={onAdd}>
   <input type="text" placeholder="Add a new todo" bind:value={newTodo} on:input={onInput} />
-  <button type="submit">Add</button>
+  <button type="submit" class="add-todo-button">Add</button>
 </form>
