@@ -18,37 +18,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
+      - name: Setup Node.js and PNPM
+        uses: ./.github/actions/install
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Cache node modules
-        id: cache-pnpm
-        uses: actions/cache@v4
+      - name: Build Svelte app
+        run: |
+          pnpm build
         env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
-      - name: build
-        run: pnpm run build
-        env:
-          GITHUB_PAGES: true
+            GITHUB_PAGES: true
 
       - name: Push to GitHub
-        uses: EndBug/add-and-commit@main
+        uses: EndBug/add-and-commit@v9
         with:
-          branch: main
-          message: "ci: :rocket: Update"
+          add: "docs"
+          default_author: github_actions
+          message: "docs: deploy to GitHub Pages"
