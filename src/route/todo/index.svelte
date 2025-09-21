@@ -26,12 +26,16 @@
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
   }
+
+  function clearTodos() {
+    todos = [];
+  }
 </script>
 
 <main class="todo-container">
   <h1 class="todo-title">Todo List</h1>
 
-  <AddTodoForm {newTodo} onInput={handleInput} onAdd={addTodo} />
+  <AddTodoForm {newTodo} onInput={handleInput} onAdd={addTodo} onClear={clearTodos} />
   <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
 
   <a href="#/">Go to Home</a>

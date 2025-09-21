@@ -32,6 +32,17 @@
   transition: background 0.2s;
 }
 
+.clear-todo-button {
+  background: #6b7280;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
 .todo-list {
   list-style: none;
   padding: 0;
