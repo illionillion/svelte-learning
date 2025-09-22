@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let todo: { id: number; text: string; completed: boolean };
+  import type { Todo } from "../../utils/localStorageTodo";
+
+  export let todo: Todo;
   export let onToggle: (id: number) => void;
   export let onRemove: (id: number) => void;
 </script>
