@@ -1,6 +1,6 @@
 <script>
-  import './index.css';
-  import Count from '../../components/count/index.svelte';
+  import "./index.css";
+  import Count from "../../components/count/index.svelte";
 </script>
 
 <main class="main-container">

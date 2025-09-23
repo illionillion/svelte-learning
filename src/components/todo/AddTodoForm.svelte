@@ -6,7 +6,12 @@
 </script>
 
 <form class="todo-input-area" on:submit|preventDefault={onAdd}>
-  <input type="text" placeholder="Add a new todo" bind:value={newTodo} on:input={onInput} />
+  <input
+    type="text"
+    placeholder="Add a new todo"
+    bind:value={newTodo}
+    on:input={onInput}
+  />
   <button type="submit" class="add-todo-button">Add</button>
   <button class="clear-todo-button" on:click={onClear}>Clear</button>
 </form>

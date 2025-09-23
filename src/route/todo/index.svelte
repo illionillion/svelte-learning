@@ -3,7 +3,11 @@
   import AddTodoForm from "../../components/todo/AddTodoForm.svelte";
   import TodoList from "../../components/todo/TodoList.svelte";
   import { onMount } from "svelte";
-  import { loadTodos, saveTodos, type Todo as LocalTodo } from "../../utils/localStorageTodo";
+  import {
+    loadTodos,
+    saveTodos,
+    type Todo as LocalTodo,
+  } from "../../utils/localStorageTodo";
 
   let newTodo = "";
   let todos: LocalTodo[] = [];
@@ -26,7 +30,7 @@
   }
 
   function toggleTodo(id: number) {
-    todos = todos.map(todo =>
+    todos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     saveTodos(todos);
@@ -44,7 +48,12 @@
 <main class="todo-container">
   <h1 class="todo-title">Todo List</h1>
 
-  <AddTodoForm {newTodo} onInput={handleInput} onAdd={addTodo} onClear={clearTodos} />
+  <AddTodoForm
+    {newTodo}
+    onInput={handleInput}
+    onAdd={addTodo}
+    onClear={clearTodos}
+  />
   <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
 
   <a href="#/">Go to Home</a>

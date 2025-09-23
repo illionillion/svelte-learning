@@ -8,8 +8,14 @@
 
 <li class="todo-item">
   <label>
-  <input type="checkbox" checked={todo.completed} on:change={() => onToggle(todo.id)} />
+    <input
+      type="checkbox"
+      checked={todo.completed}
+      on:change={() => onToggle(todo.id)}
+    />
     <span class:completed={todo.completed}>{todo.text}</span>
   </label>
-  <button on:click={() => onRemove(todo.id)} class="remove-button">Remove</button>
+  <button on:click={() => onRemove(todo.id)} class="remove-button"
+    >Remove</button
+  >
 </li>
