@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: 'docs', // 出力先をdocsに
   },
-  base: process.env.GITHUB_PAGES ? '/svelte-learning/' : '/'
+  base: process.env.GITHUB_PAGES ? '/svelte-learning/' : './'
 })
