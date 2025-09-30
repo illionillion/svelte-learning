@@ -6,5 +6,9 @@
 <main class="main-container">
   <h1 class="main-title">Hello, Custom CSS!</h1>
   <Count />
-  <a href="#/todo">Go to Todo</a>
+  
+  <nav class="navigation">
+    <a href="#/todo">Todo App</a>
+    <a href="#/stopwatch">Stopwatch</a>
+  </nav>
 </main>

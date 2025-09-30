@@ -77,3 +77,26 @@
 .remove-button:hover {
   background: #dc2626;
 }
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.navigation a {
+  padding: 0.5rem 1rem;
+  background: #6b7280;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.navigation a:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}

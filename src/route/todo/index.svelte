@@ -56,5 +56,9 @@
   />
   <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
 
-  <a href="#/">Go to Home</a>
+  <nav class="navigation">
+    <a href="#/">Home</a>
+    <a href="#/stopwatch">Stopwatch</a>
+    <a href="#/count">Counter</a>
+  </nav>
 </main>
