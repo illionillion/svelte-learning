@@ -2,16 +2,19 @@
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
+  color: white;
 }
 
 .todo-title {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .todo-input-area {
@@ -88,15 +91,17 @@
 
 .navigation a {
   padding: 0.5rem 1rem;
-  background: #6b7280;
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.9rem;
   transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .navigation a:hover {
-  background: #4b5563;
+  background: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
