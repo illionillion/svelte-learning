@@ -37,6 +37,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    gap: 1rem;
   }
   
   .laps-header h3 {
