@@ -1,5 +1,6 @@
 <script lang="ts">
   import { formatTime } from "../../utils/stopwatchUtils";
+  import './StopwatchDisplay.css';
   
   export let elapsed: number;
 </script>
@@ -7,23 +8,3 @@
 <div class="stopwatch-display">
   <div class="time">{formatTime(elapsed)}</div>
 </div>
-
-<style>
-  .stopwatch-display {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  .time {
-    font-family: 'Courier New', monospace;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #00ff41;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-    letter-spacing: 0.1em;
-  }
-</style>
