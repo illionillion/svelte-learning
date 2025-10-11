@@ -3,8 +3,6 @@
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
 .laps-header {
@@ -38,6 +36,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 280px;
+  overflow-y: auto;
 }
 
 .lap-item {
