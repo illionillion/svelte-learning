@@ -3,6 +3,9 @@
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .laps-header {
@@ -11,6 +14,7 @@
   align-items: center;
   margin-bottom: 1rem;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .laps-header h3 {
@@ -36,8 +40,9 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 280px;
   overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .lap-item {
