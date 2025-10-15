@@ -16,12 +16,12 @@
   min-width: 100px;
 }
 
-.btn-start {
+.btn-play-pause {
   background: #22c55e;
   color: white;
 }
 
-.btn-start:hover {
+.btn-play-pause:hover {
   background: #16a34a;
   transform: translateY(-2px);
 }
@@ -31,9 +31,15 @@
   color: white;
 }
 
-.btn-stop:hover {
+.btn-stop:hover:not(:disabled) {
   background: #dc2626;
   transform: translateY(-2px);
+}
+
+.btn-stop:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .btn-reset {
@@ -41,7 +47,13 @@
   color: white;
 }
 
-.btn-reset:hover {
+.btn-reset:hover:not(:disabled) {
   background: #4b5563;
   transform: translateY(-2px);
+}
+
+.btn-reset:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
 }

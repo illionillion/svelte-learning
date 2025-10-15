@@ -20,7 +20,7 @@
     }
   }
   
-  function stop() {
+  function pause() {
     if (isRunning) {
       isRunning = false;
       if (intervalId) {
@@ -30,10 +30,15 @@
     }
   }
   
-  function reset() {
-    stop();
+  function stop() {
+    pause();
     elapsed = 0;
     startTime = 0;
+  }
+  
+  function reset() {
+    stop();
+    laps = [];
   }
   
   function lap() {
@@ -54,13 +59,16 @@
     if (event.code === 'Space') {
       event.preventDefault();
       if (isRunning) {
-        stop();
+        pause();
       } else {
         start();
       }
     } else if (event.code === 'KeyR') {
       event.preventDefault();
       reset();
+    } else if (event.code === 'KeyS') {
+      event.preventDefault();
+      stop();
     } else if (event.code === 'KeyL') {
       event.preventDefault();
       lap();
@@ -73,7 +81,7 @@
   });
   
   onDestroy(() => {
-    stop();
+    pause();
     document.removeEventListener('keydown', handleKeyPress);
   });
 </script>
@@ -84,8 +92,10 @@
   <StopwatchDisplay {elapsed} />
   
   <StopwatchControls 
-    {isRunning} 
+    {isRunning}
+    {elapsed}
     onStart={start} 
+    onPause={pause}
     onStop={stop} 
     onReset={reset} 
   />
@@ -103,7 +113,7 @@
   <LapsList {laps} onClearLaps={clearLaps} />
   
   <div class="shortcuts">
-    <p><strong>Shortcuts:</strong> Space = Start/Stop, R = Reset, L = Lap</p>
+    <p><strong>Shortcuts:</strong> Space = Start/Pause, S = Stop, R = Reset, L = Lap</p>
   </div>
   
   <nav class="navigation">
