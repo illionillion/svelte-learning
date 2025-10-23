@@ -119,6 +119,7 @@
   <nav class="navigation">
     <a href="#/">Home</a>
     <a href="#/todo">Todo App</a>
+    <a href="#/tictactoe">Tic Tac Toe</a>
     <a href="#/count">Counter</a>
   </nav>
 </main>

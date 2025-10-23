@@ -10,5 +10,6 @@
   <nav class="navigation">
     <a href="#/todo">Todo App</a>
     <a href="#/stopwatch">Stopwatch</a>
+    <a href="#/tictactoe">Tic Tac Toe</a>
   </nav>
 </main>
