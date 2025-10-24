@@ -1,47 +1,126 @@
-# Svelte + TS + Vite
+# Svelte Learning
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+Svelteの学習用プロジェクトです。複数のデモアプリケーションを通じて、Svelteの基本的な機能とコンポーネント設計を学ぶことができます。
 
-## Recommended IDE Setup
+## 🚀 デモアプリケーション
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+このプロジェクトには以下のデモアプリケーションが含まれています：
 
-## Need an official Svelte framework?
+### 1. カウンター (Counter)
+- Svelteの基本的なリアクティビティを学習
+- 状態管理の基礎
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### 2. Todoアプリ (Todo App)
+- タスクの追加、削除、完了状態の切り替え
+- LocalStorageを使用したデータの永続化
+- コンポーネントの分割と再利用
 
-## Technical considerations
+### 3. ストップウォッチ (Stopwatch)
+- タイマー機能の実装
+- ラップタイムの記録
+- キーボードショートカット対応（Space: 開始/一時停止, S: 停止, R: リセット, L: ラップ）
+- `onMount`と`onDestroy`ライフサイクルの活用
 
-**Why use this over SvelteKit?**
+### 4. 三目並べ (Tic Tac Toe)
+- ゲームロジックの実装
+- 勝敗判定アルゴリズム
+- 手順の取り消し機能
+- 状態管理とゲームフローの制御
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## 📦 技術スタック
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+- **Svelte 5** - リアクティブUIフレームワーク
+- **TypeScript** - 型安全な開発環境
+- **Vite** - 高速なビルドツール
+- **svelte-spa-router** - クライアントサイドルーティング
+- **pnpm** - パッケージマネージャー
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## 🛠️ セットアップ
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+### 必要な環境
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+- Node.js (推奨: v18以上)
+- pnpm
 
-**Why include `.vscode/extensions.json`?**
+### インストール
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+```bash
+# リポジトリのクローン
+git clone https://github.com/illionillion/svelte-learning.git
+cd svelte-learning
 
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+# 依存関係のインストール
+pnpm install
 ```
+
+## 📝 利用可能なコマンド
+
+```bash
+# 開発サーバーの起動
+pnpm dev
+
+# プロダクションビルド
+pnpm build
+
+# ビルドしたアプリのプレビュー
+pnpm preview
+
+# TypeScriptとSvelteの型チェック
+pnpm check
+```
+
+## 🌐 GitHub Pagesでの公開
+
+このプロジェクトはGitHub Pagesで公開されています。`main`ブランチへのプッシュで自動的にデプロイされます。
+
+- デプロイURL: https://illionillion.github.io/svelte-learning/
+
+## 📁 プロジェクト構造
+
+```
+svelte-learning/
+├── src/
+│   ├── components/      # 再利用可能なコンポーネント
+│   │   ├── count/       # カウンターコンポーネント
+│   │   ├── stopwatch/   # ストップウォッチコンポーネント
+│   │   ├── tictactoe/   # 三目並べコンポーネント
+│   │   └── todo/        # Todoコンポーネント
+│   ├── route/           # ページコンポーネント
+│   │   ├── home/        # ホームページ
+│   │   ├── stopwatch/   # ストップウォッチページ
+│   │   ├── tictactoe/   # 三目並べページ
+│   │   ├── todo/        # Todoページ
+│   │   └── not-found/   # 404ページ
+│   ├── utils/           # ユーティリティ関数
+│   ├── App.svelte       # ルートコンポーネント
+│   └── main.ts          # エントリーポイント
+├── docs/                # ビルド出力ディレクトリ（GitHub Pages用）
+└── public/              # 静的アセット
+```
+
+## 🎯 学習ポイント
+
+このプロジェクトを通じて以下のSvelteの概念を学習できます：
+
+- **リアクティビティ**: Svelteの自動的な再レンダリング機能
+- **コンポーネント設計**: 再利用可能なコンポーネントの作成
+- **イベントハンドリング**: ユーザーインタラクションの処理
+- **状態管理**: アプリケーション状態の管理
+- **ライフサイクル**: `onMount`, `onDestroy`などのフック
+- **ルーティング**: SPAでのページ遷移
+- **LocalStorage**: データの永続化
+- **TypeScript統合**: 型安全なSvelte開発
+
+## 📄 ライセンス
+
+このプロジェクトはMITライセンスの下で公開されています。
+
+## 🔗 参考リンク
+
+- [Svelte公式ドキュメント](https://svelte.jp/)
+- [Svelte Tutorial](https://learn.svelte.jp/)
+- [Vite公式ドキュメント](https://ja.vitejs.dev/)
+
+## 💡 推奨IDE設定
+
+[VS Code](https://code.visualstudio.com/) + [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
