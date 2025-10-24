@@ -1,10 +1,37 @@
-# Svelte + TS + Vite
+# Svelte Learning / Svelteの学習
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+Svelteの学習用プロジェクトです。Svelte 5 + TypeScript + Viteを使用しています。
 
-## Recommended IDE Setup
+## 📚 ドキュメント
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- **[環境と構成ドキュメント (ENVIRONMENT.md)](./ENVIRONMENT.md)** - 開発環境、プロジェクト構造、ビルド設定の詳細
+
+## 🚀 クイックスタート
+
+```bash
+# 依存関係のインストール
+pnpm install
+
+# 開発サーバーの起動
+pnpm dev
+
+# プロダクションビルド
+pnpm build
+
+# 型チェック
+pnpm check
+```
+
+## 🎯 学習用ルート
+
+- `/` - ホーム（カウンターデモ）
+- `/todo` - Todoアプリ
+- `/stopwatch` - ストップウォッチ
+- `/tictactoe` - 三目並べゲーム
+
+## 💻 推奨IDE設定
+
+[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 
 ## Need an official Svelte framework?
 
