@@ -82,5 +82,7 @@
 
 .navigation a:hover {
   background: white;
-  color: #667eea;
+  color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
