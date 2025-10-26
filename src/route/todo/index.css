@@ -1,20 +1,23 @@
+@import '../../styles/common.css';
+
+/* Todoページ固有のスタイル */
 .todo-container {
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: var(--primary-gradient);
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 4px 20px var(--shadow-strong);
   min-height: 100vh;
-  color: white;
+  color: var(--text-light);
 }
 
 .todo-title {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--text-light);
+  text-shadow: 0 2px 4px var(--shadow-strong);
 }
 
 .todo-input-area {
@@ -22,31 +25,48 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
-  input[type="text"] {
-    width: 100%;
-  }
 }
 
+.todo-input-area input[type="text"] {
+  width: 100%;
+}
+
+/* ボタンスタイルは共通CSSから継承 */
 .add-todo-button {
-  background: #10b981;
-  color: #fff;
+  /* btn btn-primaryクラスのスタイルを使用 */
+  background: var(--button-primary);
+  color: var(--text-light);
   padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-medium);
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.add-todo-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
 }
 
 .clear-todo-button {
-  background: #6b7280;
-  color: #fff;
+  background: var(--button-secondary);
+  color: var(--text-light);
   padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-medium);
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+}
+
+.clear-todo-button:hover {
+  background: var(--button-secondary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4);
 }
 
 .todo-list {
@@ -72,41 +92,21 @@
 }
 
 .remove-button {
-  background: #ef4444;
-  color: #fff;
+  background: var(--button-danger);
+  color: var(--text-light);
   padding: 0.3rem 0.8rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-medium);
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
 }
+
 .remove-button:hover {
-  background: #dc2626;
-}
-
-.navigation {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.navigation a {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.navigation a:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #374151;
+  background: var(--button-danger-hover);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
 }
+
+/* ナビゲーションスタイルは共通CSSから継承 */

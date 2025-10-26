@@ -1,0 +1,286 @@
+/* ==============================================================================
+   共通スタイル - Svelte Learning Project
+   ============================================================================== */
+
+/* ------------------------------------------------------------------------------
+   CSS Variables (カスタムプロパティ)
+   ------------------------------------------------------------------------------ */
+:root {
+  /* カラーパレット */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --white: #ffffff;
+  --text-dark: #374151;
+  --text-light: #ffffff;
+  --shadow-light: rgba(255, 255, 255, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --shadow-strong: rgba(0, 0, 0, 0.3);
+  
+  /* ボタンカラー */
+  --button-primary: #10b981;
+  --button-primary-hover: #059669;
+  --button-secondary: #6b7280;
+  --button-secondary-hover: #4b5563;
+  --button-danger: #ef4444;
+  --button-danger-hover: #dc2626;
+  --button-warning: #f59e0b;
+  --button-warning-hover: #d97706;
+  --button-success: #22c55e;
+  --button-success-hover: #16a34a;
+  --button-disabled: #9ca3af;
+  
+  /* エフェクト */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --border-radius-small: 4px;
+  --border-radius-medium: 6px;
+  --border-radius-large: 8px;
+  --border-radius-xl: 12px;
+}
+
+/* ------------------------------------------------------------------------------
+   基本レイアウト
+   ------------------------------------------------------------------------------ */
+.page-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--primary-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px var(--shadow-strong);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------------------
+   ナビゲーション
+   ------------------------------------------------------------------------------ */
+.navigation {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.navigation a {
+  padding: 0.5rem 1rem;
+  background: var(--shadow-light);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius-medium);
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navigation a:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow-dark);
+}
+
+/* ------------------------------------------------------------------------------
+   ボタンスタイル
+   ------------------------------------------------------------------------------ */
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--border-radius-large);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  min-width: 120px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--button-primary);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--button-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-secondary {
+  background: var(--button-secondary);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--button-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4);
+}
+
+.btn-danger {
+  background: var(--button-danger);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--button-danger-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-warning {
+  background: var(--button-warning);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.btn-warning:hover:not(:disabled) {
+  background: var(--button-warning-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-success {
+  background: var(--button-success);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: var(--button-success-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.btn:disabled {
+  background: var(--button-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  min-width: 150px;
+}
+
+/* ------------------------------------------------------------------------------
+   カード・コンテナスタイル
+   ------------------------------------------------------------------------------ */
+.card {
+  background: var(--shadow-light);
+  border-radius: var(--border-radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px var(--shadow-dark);
+  backdrop-filter: blur(10px);
+}
+
+.card-white {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+}
+
+/* ------------------------------------------------------------------------------
+   フォームスタイル
+   ------------------------------------------------------------------------------ */
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius-medium);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ------------------------------------------------------------------------------
+   ユーティリティクラス
+   ------------------------------------------------------------------------------ */
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: var(--text-light);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* ------------------------------------------------------------------------------
+   レスポンシブ
+   ------------------------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .navigation {
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}

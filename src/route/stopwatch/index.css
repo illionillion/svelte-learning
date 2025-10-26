@@ -1,7 +1,11 @@
+@import '../../styles/common.css';
+
+/* ストップウォッチページ固有のスタイル */
 .stopwatch-container {
+  /* 共通のpage-containerスタイルを継承 */
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,11 +15,12 @@
 }
 
 .stopwatch-title {
+  /* 共通のpage-titleスタイルを使用 */
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--text-light);
+  text-shadow: 0 2px 4px var(--shadow-strong);
 }
 
 .action-buttons {

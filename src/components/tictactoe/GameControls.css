@@ -1,3 +1,5 @@
+@import '../../styles/common.css';
+
 .game-controls {
   display: flex;
   gap: 1rem;
@@ -5,43 +7,51 @@
   margin: 2rem 0;
 }
 
-.btn {
+/* ボタンの基本スタイルは共通CSSから継承 */
+.btn-new-game {
+  /* btn btn-primaryスタイルを継承 */
+  background: var(--button-primary);
+  color: var(--text-light);
   padding: 0.75rem 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius-large);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   min-width: 120px;
-}
-
-.btn-new-game {
-  background: #10b981;
-  color: white;
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .btn-new-game:hover {
-  background: #059669;
+  background: var(--button-primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
 }
 
 .btn-undo {
-  background: #f59e0b;
-  color: white;
+  /* btn btn-warningスタイルを継承 */
+  background: var(--button-warning);
+  color: var(--text-light);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--border-radius-large);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  min-width: 120px;
   box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
 }
 
 .btn-undo:hover:not(:disabled) {
-  background: #d97706;
+  background: var(--button-warning-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
 }
 
 .btn-undo:disabled {
-  background: #9ca3af;
+  background: var(--button-disabled);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;

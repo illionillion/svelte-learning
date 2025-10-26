@@ -1,7 +1,11 @@
+@import '../../styles/common.css';
+
+/* Tic Tac Toeページ固有のスタイル */
 .tictactoe-container {
+  /* 共通のpage-containerスタイルを継承 */
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,35 +15,12 @@
 }
 
 .tictactoe-title {
+  /* 共通のpage-titleスタイルを使用 */
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--text-light);
+  text-shadow: 0 2px 4px var(--shadow-strong);
 }
 
-.navigation {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.navigation a {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.navigation a:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #374151;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
+/* ナビゲーションスタイルは共通CSSから継承 */
