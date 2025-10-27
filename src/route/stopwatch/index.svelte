@@ -3,6 +3,7 @@
   import StopwatchDisplay from "../../components/stopwatch/StopwatchDisplay.svelte";
   import StopwatchControls from "../../components/stopwatch/StopwatchControls.svelte";
   import LapsList from "../../components/stopwatch/LapsList.svelte";
+  import Navigation from "../../components/common/Navigation.svelte";
   import { getCurrentTime } from "../../utils/stopwatchUtils";
   import "./index.css";
   
@@ -116,10 +117,5 @@
     <p><strong>Shortcuts:</strong> Space = Start/Pause, S = Stop, R = Reset, L = Lap</p>
   </div>
   
-  <nav class="navigation">
-    <a href="#/">Home</a>
-    <a href="#/todo">Todo App</a>
-    <a href="#/tictactoe">Tic Tac Toe</a>
-    <a href="#/count">Counter</a>
-  </nav>
+  <Navigation currentPage="stopwatch" />
 </main>

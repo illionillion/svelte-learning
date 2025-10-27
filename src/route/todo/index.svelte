@@ -2,6 +2,7 @@
   import "./index.css";
   import AddTodoForm from "../../components/todo/AddTodoForm.svelte";
   import TodoList from "../../components/todo/TodoList.svelte";
+  import Navigation from "../../components/common/Navigation.svelte";
   import { onMount } from "svelte";
   import {
     loadTodos,
@@ -56,10 +57,5 @@
   />
   <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
 
-  <nav class="navigation">
-    <a href="#/">Home</a>
-    <a href="#/stopwatch">Stopwatch</a>
-    <a href="#/tictactoe">Tic Tac Toe</a>
-    <a href="#/count">Counter</a>
-  </nav>
+  <Navigation currentPage="todo" />
 </main>

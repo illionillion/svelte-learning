@@ -3,6 +3,7 @@
   import GameBoard from "../../components/tictactoe/GameBoard.svelte";
   import GameStatus from "../../components/tictactoe/GameStatus.svelte";
   import GameControls from "../../components/tictactoe/GameControls.svelte";
+  import Navigation from "../../components/common/Navigation.svelte";
   import { 
     createEmptyBoard, 
     checkWinner, 
@@ -80,10 +81,5 @@
     canUndo={moveHistory.length > 0}
   />
   
-  <nav class="navigation">
-    <a href="#/">Home</a>
-    <a href="#/todo">Todo App</a>
-    <a href="#/stopwatch">Stopwatch</a>
-    <a href="#/count">Counter</a>
-  </nav>
+  <Navigation currentPage="tictactoe" />
 </main>
