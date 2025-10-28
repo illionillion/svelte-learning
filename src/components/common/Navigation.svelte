@@ -9,6 +9,8 @@
     { href: '#/tictactoe', label: 'Tic Tac Toe', key: 'tictactoe' },
     { href: '#/count', label: 'Counter', key: 'count' }
   ];
+import '../../styles/common.css';
+import './index.css';
 </script>
 
 <nav class="navigation">
@@ -22,14 +24,3 @@
     </a>
   {/each}
 </nav>
-
-<style>
-  @import '../../styles/common.css';
-  
-  /* 共通スタイルはcommon.cssから継承 */
-  .navigation a.active {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-</style>
