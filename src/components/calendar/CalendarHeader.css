@@ -1,0 +1,87 @@
+@import '../../styles/common.css';
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--shadow-light);
+  border-radius: var(--border-radius-xl);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.nav-button {
+  background: var(--button-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.nav-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.date-selector {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.year-select,
+.month-select {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius-medium);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  min-width: 120px;
+}
+
+.year-select:focus,
+.month-select:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.year-select:hover,
+.month-select:hover {
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow-dark);
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .date-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .year-select,
+  .month-select {
+    min-width: 150px;
+  }
+}

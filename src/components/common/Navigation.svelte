@@ -7,6 +7,7 @@
     { href: '#/todo', label: 'Todo App', key: 'todo' },
     { href: '#/stopwatch', label: 'Stopwatch', key: 'stopwatch' },
     { href: '#/tictactoe', label: 'Tic Tac Toe', key: 'tictactoe' },
+    { href: '#/calendar', label: 'Calendar', key: 'calendar' },
     { href: '#/count', label: 'Counter', key: 'count' }
   ];
 import '../../styles/common.css';

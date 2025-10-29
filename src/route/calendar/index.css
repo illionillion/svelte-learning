@@ -1,0 +1,132 @@
+@import '../../styles/common.css';
+
+/* カレンダーページ固有のスタイル */
+.calendar-container {
+  /* 共通のpage-containerスタイルを継承 */
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--primary-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.calendar-title {
+  /* 共通のpage-titleスタイルを使用 */
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px var(--shadow-strong);
+}
+
+.calendar-content {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.selected-date-info {
+  background: var(--shadow-light);
+  border-radius: var(--border-radius-xl);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.selected-date-info h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.selected-date-info p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.today-badge {
+  display: inline-block;
+  background: var(--button-primary);
+  color: var(--text-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.shortcuts {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-large);
+  color: var(--text-light);
+  text-align: center;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+}
+
+.shortcuts p {
+  margin: 0;
+}
+
+/* アニメーション */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 1rem;
+  }
+  
+  .calendar-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .calendar-content {
+    max-width: 100%;
+  }
+  
+  .selected-date-info {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .shortcuts {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-container {
+    padding: 0.5rem;
+  }
+  
+  .calendar-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .selected-date-info p {
+    font-size: 1rem;
+  }
+}

@@ -4,6 +4,7 @@
   import Todo from "./route/todo/index.svelte";
   import Stopwatch from "./route/stopwatch/index.svelte";
   import TicTacToe from "./route/tictactoe/index.svelte";
+  import Calendar from "./route/calendar/index.svelte";
   import NotFound from "./route/not-found/index.svelte";
 
   const routes = {
@@ -12,6 +13,7 @@
     "/todo": Todo,
     "/stopwatch": Stopwatch,
     "/tictactoe": TicTacToe,
+    "/calendar": Calendar,
     "*": NotFound,
   };
 </script>
