@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import CalendarHeader from "../../components/calendar/CalendarHeader.svelte";
   import CalendarGrid from "../../components/calendar/CalendarGrid.svelte";
-  import Navigation from "../../components/common/Navigation.svelte";
+  import Layout from "../../components/layout/Layout.svelte";
   import { 
     generateCalendar, 
     getPreviousMonth, 
@@ -101,40 +101,40 @@
   });
 </script>
 
-<main class="calendar-container">
-  <h1 class="calendar-title">Calendar</h1>
-  
-  <div class="calendar-content">
-    <CalendarHeader 
-      {currentYear}
-      {currentMonth}
-      onPreviousMonth={goToPreviousMonth}
-      onNextMonth={goToNextMonth}
-      onYearChange={handleYearChange}
-      onMonthChange={handleMonthChange}
-    />
+<Layout currentPage="calendar">
+  <main class="calendar-container">
+    <h1 class="calendar-title">Calendar</h1>
     
-    <CalendarGrid 
-      {weeks}
-      onDateClick={handleDateClick}
-    />
+    <div class="calendar-content">
+      <CalendarHeader 
+        {currentYear}
+        {currentMonth}
+        onPreviousMonth={goToPreviousMonth}
+        onNextMonth={goToNextMonth}
+        onYearChange={handleYearChange}
+        onMonthChange={handleMonthChange}
+      />
+      
+      <CalendarGrid 
+        {weeks}
+        onDateClick={handleDateClick}
+      />
+      
+      {#if selectedDate}
+        <div class="selected-date-info">
+          <h3>Selected Date</h3>
+          <p>
+            {selectedDate.year}年 {selectedDate.month + 1}月 {selectedDate.date}日
+            {#if selectedDate.isToday}
+              <span class="today-badge">Today</span>
+            {/if}
+          </p>
+        </div>
+      {/if}
+    </div>
     
-    {#if selectedDate}
-      <div class="selected-date-info">
-        <h3>Selected Date</h3>
-        <p>
-          {selectedDate.year}年 {selectedDate.month + 1}月 {selectedDate.date}日
-          {#if selectedDate.isToday}
-            <span class="today-badge">Today</span>
-          {/if}
-        </p>
-      </div>
-    {/if}
-  </div>
-  
-  <div class="shortcuts">
-    <p><strong>Shortcuts:</strong> ← Previous Month, → Next Month, Home = Today</p>
-  </div>
-  
-  <Navigation currentPage="calendar" />
-</main>
+    <div class="shortcuts">
+      <p><strong>Shortcuts:</strong> ← Previous Month, → Next Month, Home = Today</p>
+    </div>
+  </main>
+</Layout>

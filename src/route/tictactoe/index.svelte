@@ -3,7 +3,7 @@
   import GameBoard from "../../components/tictactoe/GameBoard.svelte";
   import GameStatus from "../../components/tictactoe/GameStatus.svelte";
   import GameControls from "../../components/tictactoe/GameControls.svelte";
-  import Navigation from "../../components/common/Navigation.svelte";
+  import Layout from "../../components/layout/Layout.svelte";
   import { 
     createEmptyBoard, 
     checkWinner, 
@@ -64,22 +64,22 @@
   });
 </script>
 
-<main class="tictactoe-container">
-  <h1 class="tictactoe-title">Tic Tac Toe</h1>
-  
-  <GameStatus status={gameStatus} {currentPlayer} />
-  
-  <GameBoard 
-    {board} 
-    onCellClick={handleCellClick}
-    isGameOver={gameStatus !== 'playing'}
-  />
-  
-  <GameControls 
-    onNewGame={newGame}
-    onUndo={undoMove}
-    canUndo={moveHistory.length > 0}
-  />
-  
-  <Navigation currentPage="tictactoe" />
-</main>
+<Layout currentPage="tictactoe">
+  <main class="tictactoe-container">
+    <h1 class="tictactoe-title">Tic Tac Toe</h1>
+    
+    <GameStatus status={gameStatus} {currentPlayer} />
+    
+    <GameBoard 
+      {board} 
+      onCellClick={handleCellClick}
+      isGameOver={gameStatus !== 'playing'}
+    />
+    
+    <GameControls 
+      onNewGame={newGame}
+      onUndo={undoMove}
+      canUndo={moveHistory.length > 0}
+    />
+  </main>
+</Layout>

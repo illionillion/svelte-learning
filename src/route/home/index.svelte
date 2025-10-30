@@ -1,12 +1,12 @@
 <script>
   import "./index.css";
   import Count from "../../components/count/index.svelte";
-  import Navigation from "../../components/common/Navigation.svelte";
+  import Layout from "../../components/layout/Layout.svelte";
 </script>
 
-<main class="main-container">
-  <h1 class="main-title">Hello, Custom CSS!</h1>
-  <Count />
-  
-  <Navigation currentPage="home" />
-</main>
+<Layout currentPage="home">
+  <main class="main-container">
+    <h1 class="main-title">Hello, Custom CSS!</h1>
+    <Count />
+  </main>
+</Layout>

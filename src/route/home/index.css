@@ -2,14 +2,16 @@
 
 /* ホームページ固有のスタイル */
 .main-container {
-  /* 共通のpage-containerスタイルを継承し、中央寄せに調整 */
-  width: 100vw;
-  height: 100vh;
+  /* Layout内のmainタグがすでにヘッダー分のマージンを持っているので調整 */
+  width: 100%;
+  min-height: calc(100vh - 60px);
   background: var(--primary-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .main-title {

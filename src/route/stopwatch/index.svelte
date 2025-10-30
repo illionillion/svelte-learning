@@ -3,7 +3,7 @@
   import StopwatchDisplay from "../../components/stopwatch/StopwatchDisplay.svelte";
   import StopwatchControls from "../../components/stopwatch/StopwatchControls.svelte";
   import LapsList from "../../components/stopwatch/LapsList.svelte";
-  import Navigation from "../../components/common/Navigation.svelte";
+  import Layout from "../../components/layout/Layout.svelte";
   import { getCurrentTime } from "../../utils/stopwatchUtils";
   import "./index.css";
   
@@ -87,7 +87,8 @@
   });
 </script>
 
-<main class="stopwatch-container">
+<Layout currentPage="stopwatch">
+  <main class="stopwatch-container">
   <h1 class="stopwatch-title">Stopwatch</h1>
   
   <StopwatchDisplay {elapsed} />
@@ -117,5 +118,5 @@
     <p><strong>Shortcuts:</strong> Space = Start/Pause, S = Stop, R = Reset, L = Lap</p>
   </div>
   
-  <Navigation currentPage="stopwatch" />
 </main>
+</Layout>

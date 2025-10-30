@@ -2,7 +2,7 @@
   import "./index.css";
   import AddTodoForm from "../../components/todo/AddTodoForm.svelte";
   import TodoList from "../../components/todo/TodoList.svelte";
-  import Navigation from "../../components/common/Navigation.svelte";
+  import Layout from "../../components/layout/Layout.svelte";
   import { onMount } from "svelte";
   import {
     loadTodos,
@@ -46,16 +46,16 @@
   });
 </script>
 
-<main class="todo-container">
-  <h1 class="todo-title">Todo List</h1>
+<Layout currentPage="todo">
+  <main class="todo-container">
+    <h1 class="todo-title">Todo List</h1>
 
-  <AddTodoForm
-    {newTodo}
-    onInput={handleInput}
-    onAdd={addTodo}
-    onClear={clearTodos}
-  />
-  <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
-
-  <Navigation currentPage="todo" />
-</main>
+    <AddTodoForm
+      {newTodo}
+      onInput={handleInput}
+      onAdd={addTodo}
+      onClear={clearTodos}
+    />
+    <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
+  </main>
+</Layout>
