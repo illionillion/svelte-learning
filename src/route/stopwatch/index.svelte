@@ -88,7 +88,7 @@
 </script>
 
 <Layout currentPage="stopwatch">
-  <main class="stopwatch-container">
+  <div class="stopwatch-container">
   <h1 class="stopwatch-title">Stopwatch</h1>
   
   <StopwatchDisplay {elapsed} />
@@ -118,5 +118,5 @@
     <p><strong>Shortcuts:</strong> Space = Start/Pause, S = Stop, R = Reset, L = Lap</p>
   </div>
   
-</main>
+</div>
 </Layout>

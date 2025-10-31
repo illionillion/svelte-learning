@@ -102,7 +102,7 @@
 </script>
 
 <Layout currentPage="calendar">
-  <main class="calendar-container">
+  <div class="calendar-container">
     <h1 class="calendar-title">Calendar</h1>
     
     <div class="calendar-content">
@@ -136,5 +136,5 @@
     <div class="shortcuts">
       <p><strong>Shortcuts:</strong> ← Previous Month, → Next Month, Home = Today</p>
     </div>
-  </main>
+  </div>
 </Layout>

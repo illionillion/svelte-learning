@@ -65,7 +65,7 @@
 </script>
 
 <Layout currentPage="tictactoe">
-  <main class="tictactoe-container">
+  <div class="tictactoe-container">
     <h1 class="tictactoe-title">Tic Tac Toe</h1>
     
     <GameStatus status={gameStatus} {currentPlayer} />
@@ -81,5 +81,5 @@
       onUndo={undoMove}
       canUndo={moveHistory.length > 0}
     />
-  </main>
+  </div>
 </Layout>

@@ -5,8 +5,8 @@
 </script>
 
 <Layout currentPage="home">
-  <main class="main-container">
+  <div class="main-container">
     <h1 class="main-title">Hello, Custom CSS!</h1>
     <Count />
-  </main>
+  </div>
 </Layout>

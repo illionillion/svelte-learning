@@ -47,7 +47,7 @@
 </script>
 
 <Layout currentPage="todo">
-  <main class="todo-container">
+  <div class="todo-container">
     <h1 class="todo-title">Todo List</h1>
 
     <AddTodoForm
@@ -57,5 +57,5 @@
       onClear={clearTodos}
     />
     <TodoList {todos} onToggle={toggleTodo} onRemove={removeTodo} />
-  </main>
+  </div>
 </Layout>
