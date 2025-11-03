@@ -14,6 +14,8 @@
     "/stopwatch": Stopwatch,
     "/tictactoe": TicTacToe,
     "/calendar": Calendar,
+    "/calendar/:year/:month": Calendar,
+    "/calendar/:year/:month/:day": Calendar,
     "*": NotFound,
   };
 </script>
