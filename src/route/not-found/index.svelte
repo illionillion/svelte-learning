@@ -1,6 +1,6 @@
 <script lang="ts">
-  import "./index.css";
-  import Layout from "../../components/layout/Layout.svelte";
+  import './index.css';
+  import Layout from '../../components/layout/Layout.svelte';
 </script>
 
 <Layout currentPage="">

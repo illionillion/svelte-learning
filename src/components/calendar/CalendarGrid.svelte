@@ -1,10 +1,10 @@
 <script lang="ts">
   import { getDayNames, type CalendarDate } from '../../utils/calendarUtils';
   import './CalendarGrid.css';
-  
+
   export let weeks: CalendarDate[][];
   export let onDateClick: (date: CalendarDate) => void = () => {};
-  
+
   const dayNames = getDayNames();
 </script>
 
@@ -15,12 +15,12 @@
       <div class="day-header">{dayName}</div>
     {/each}
   </div>
-  
+
   <!-- カレンダーの日付 -->
   {#each weeks as week}
     <div class="week-row">
       {#each week as dateItem}
-        <button 
+        <button
           class="date-cell"
           class:current-month={dateItem.isCurrentMonth}
           class:other-month={!dateItem.isCurrentMonth}

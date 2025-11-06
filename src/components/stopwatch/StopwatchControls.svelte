@@ -1,13 +1,13 @@
 <script lang="ts">
   import './StopwatchControls.css';
-  
+
   export let isRunning: boolean;
   export let elapsed: number;
   export let onStart: () => void;
   export let onPause: () => void;
   export let onStop: () => void;
   export let onReset: () => void;
-  
+
   function handlePlayPause() {
     if (isRunning) {
       onPause();

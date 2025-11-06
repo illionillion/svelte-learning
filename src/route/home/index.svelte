@@ -1,7 +1,7 @@
 <script>
-  import "./index.css";
-  import Count from "../../components/count/index.svelte";
-  import Layout from "../../components/layout/Layout.svelte";
+  import './index.css';
+  import Count from '../../components/count/index.svelte';
+  import Layout from '../../components/layout/Layout.svelte';
 </script>
 
 <Layout currentPage="home">

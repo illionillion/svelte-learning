@@ -1,16 +1,16 @@
 <script lang="ts">
-  import "./index.css";
-  import AddTodoForm from "../../components/todo/AddTodoForm.svelte";
-  import TodoList from "../../components/todo/TodoList.svelte";
-  import Layout from "../../components/layout/Layout.svelte";
-  import { onMount } from "svelte";
+  import './index.css';
+  import AddTodoForm from '../../components/todo/AddTodoForm.svelte';
+  import TodoList from '../../components/todo/TodoList.svelte';
+  import Layout from '../../components/layout/Layout.svelte';
+  import { onMount } from 'svelte';
   import {
     loadTodos,
     saveTodos,
     type Todo as LocalTodo,
-  } from "../../utils/localStorageTodo";
+  } from '../../utils/localStorageTodo';
 
-  let newTodo = "";
+  let newTodo = '';
   let todos: LocalTodo[] = [];
 
   function handleInput(e: Event) {
@@ -21,17 +21,17 @@
     if (newTodo.trim()) {
       todos = [...todos, { id: Date.now(), text: newTodo, completed: false }];
       saveTodos(todos);
-      newTodo = "";
+      newTodo = '';
     }
   }
 
   function removeTodo(id: number) {
-    todos = todos.filter((todo) => todo.id !== id);
+    todos = todos.filter(todo => todo.id !== id);
     saveTodos(todos);
   }
 
   function toggleTodo(id: number) {
-    todos = todos.map((todo) =>
+    todos = todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     saveTodos(todos);

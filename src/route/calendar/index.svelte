@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { params, push } from "svelte-spa-router";
-  import CalendarHeader from "../../components/calendar/CalendarHeader.svelte";
-  import CalendarGrid from "../../components/calendar/CalendarGrid.svelte";
-  import Layout from "../../components/layout/Layout.svelte";
+  import { onMount } from 'svelte';
+  import { params, push } from 'svelte-spa-router';
+  import CalendarHeader from '../../components/calendar/CalendarHeader.svelte';
+  import CalendarGrid from '../../components/calendar/CalendarGrid.svelte';
+  import Layout from '../../components/layout/Layout.svelte';
   import {
     generateCalendar,
     getPreviousMonth,
     getNextMonth,
     type CalendarDate,
-  } from "../../utils/calendarUtils";
-  import "./index.css";
+  } from '../../utils/calendarUtils';
+  import './index.css';
 
   // パラメータの型定義
   interface CalendarParams {
@@ -24,11 +24,11 @@
   let weeks: CalendarDate[][];
   let selectedDate: CalendarDate | null = null; // URLを更新する関数
   function updateURL(year: number, month: number, day?: number) {
-    const monthStr = String(month + 1).padStart(2, "0");
+    const monthStr = String(month + 1).padStart(2, '0');
     let newPath = `/calendar/${year}/${monthStr}`;
 
     if (day !== undefined) {
-      const dayStr = String(day).padStart(2, "0");
+      const dayStr = String(day).padStart(2, '0');
       newPath += `/${dayStr}`;
     }
 
@@ -142,15 +142,15 @@
   // キーボードショートカット
   function handleKeydown(event: KeyboardEvent) {
     switch (event.key) {
-      case "ArrowLeft":
+      case 'ArrowLeft':
         event.preventDefault();
         goToPreviousMonth();
         break;
-      case "ArrowRight":
+      case 'ArrowRight':
         event.preventDefault();
         goToNextMonth();
         break;
-      case "Home":
+      case 'Home':
         event.preventDefault();
         // ホームキーで今日の日付に戻る
         const today = new Date();
@@ -171,7 +171,7 @@
 
   // コンポーネントマウント時の初期化
   onMount(() => {
-    document.title = "Calendar | Svelte Learning";
+    document.title = 'Calendar | Svelte Learning';
 
     // 初回読み込み時にURLパラメータから初期化
     const currentParams = $params as CalendarParams;
@@ -190,11 +190,11 @@
     hasInitialized = true;
 
     // キーボードイベントリスナーを追加
-    window.addEventListener("keydown", handleKeydown);
+    window.addEventListener('keydown', handleKeydown);
 
     // クリーンアップ
     return () => {
-      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener('keydown', handleKeydown);
     };
   });
 </script>

@@ -2,7 +2,7 @@
   import './GameStatus.css';
   import type { GameStatus, Player } from '../../utils/tictactoeUtils';
   import { getStatusMessage } from '../../utils/tictactoeUtils';
-  
+
   export let status: GameStatus;
   export let currentPlayer: Player;
 </script>
@@ -11,7 +11,7 @@
   <div class="status-message {status}">
     {getStatusMessage(status, currentPlayer)}
   </div>
-  
+
   {#if status === 'playing'}
     <div class="player-indicator">
       <div class="player-badge {currentPlayer === 'X' ? 'active' : ''}">

@@ -1,7 +1,7 @@
 <script lang="ts">
   export let onToggleSidebar: () => void;
 
-  const appTitle = "Svelte Learning";
+  const appTitle = 'Svelte Learning';
 </script>
 
 <header class="header">
@@ -27,7 +27,7 @@
 </header>
 
 <style>
-  @import "../../styles/common.css";
+  @import '../../styles/common.css';
 
   .header {
     position: fixed;

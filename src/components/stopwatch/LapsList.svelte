@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { formatTime } from "../../utils/stopwatchUtils";
+  import { formatTime } from '../../utils/stopwatchUtils';
   import './LapsList.css';
-  
+
   export let laps: number[];
   export let onClearLaps: () => void;
 </script>

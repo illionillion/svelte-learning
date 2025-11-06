@@ -13,7 +13,10 @@ export interface CalendarDate {
 /**
  * 指定された年月のカレンダー配列を生成する
  */
-export function generateCalendar(year: number, month: number): CalendarDate[][] {
+export function generateCalendar(
+  year: number,
+  month: number
+): CalendarDate[][] {
   const today = new Date();
   const todayYear = today.getFullYear();
   const todayMonth = today.getMonth();
@@ -22,23 +25,23 @@ export function generateCalendar(year: number, month: number): CalendarDate[][] 
   // 月の最初の日と最後の日を取得
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
-  
+
   // 月の最初の日の曜日（0: 日曜日）
   const firstDayWeek = firstDay.getDay();
-  
+
   // 前月の最後の日
   const prevMonthLastDay = new Date(year, month, 0).getDate();
-  
+
   const weeks: CalendarDate[][] = [];
   let currentWeek: CalendarDate[] = [];
-  
+
   // 前月の日付を埋める
   for (let i = firstDayWeek - 1; i >= 0; i--) {
     const date = prevMonthLastDay - i;
     const prevMonth = month - 1;
     const prevYear = month === 0 ? year - 1 : year;
     const actualMonth = month === 0 ? 11 : prevMonth;
-    
+
     currentWeek.push({
       date,
       month: actualMonth,
@@ -46,14 +49,15 @@ export function generateCalendar(year: number, month: number): CalendarDate[][] 
       isCurrentMonth: false,
       isToday: false,
       isPreviousMonth: true,
-      isNextMonth: false
+      isNextMonth: false,
     });
   }
-  
+
   // 今月の日付を埋める
   for (let date = 1; date <= lastDay.getDate(); date++) {
-    const isToday = year === todayYear && month === todayMonth && date === todayDate;
-    
+    const isToday =
+      year === todayYear && month === todayMonth && date === todayDate;
+
     currentWeek.push({
       date,
       month,
@@ -61,23 +65,23 @@ export function generateCalendar(year: number, month: number): CalendarDate[][] 
       isCurrentMonth: true,
       isToday,
       isPreviousMonth: false,
-      isNextMonth: false
+      isNextMonth: false,
     });
-    
+
     // 土曜日（6）になったら週を完成させる
     if (currentWeek.length === 7) {
       weeks.push(currentWeek);
       currentWeek = [];
     }
   }
-  
+
   // 来月の日付で残りを埋める
   let nextMonthDate = 1;
   while (currentWeek.length < 7) {
     const nextMonth = month + 1;
     const nextYear = month === 11 ? year + 1 : year;
     const actualMonth = month === 11 ? 0 : nextMonth;
-    
+
     currentWeek.push({
       date: nextMonthDate,
       month: actualMonth,
@@ -85,16 +89,16 @@ export function generateCalendar(year: number, month: number): CalendarDate[][] 
       isCurrentMonth: false,
       isToday: false,
       isPreviousMonth: false,
-      isNextMonth: true
+      isNextMonth: true,
     });
     nextMonthDate++;
   }
-  
+
   // 最後の週を追加
   if (currentWeek.length > 0) {
     weeks.push(currentWeek);
   }
-  
+
   return weeks;
 }
 
@@ -103,8 +107,18 @@ export function generateCalendar(year: number, month: number): CalendarDate[][] 
  */
 export function getMonthName(month: number): string {
   const months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
   return months[month];
 }
@@ -122,11 +136,11 @@ export function getDayNames(): string[] {
 export function generateYearOptions(): number[] {
   const currentYear = new Date().getFullYear();
   const years: number[] = [];
-  
+
   for (let i = currentYear - 10; i <= currentYear + 10; i++) {
     years.push(i);
   }
-  
+
   return years;
 }
 
@@ -146,14 +160,17 @@ export function generateMonthOptions(): { value: number; name: string }[] {
     { value: 8, name: 'September' },
     { value: 9, name: 'October' },
     { value: 10, name: 'November' },
-    { value: 11, name: 'December' }
+    { value: 11, name: 'December' },
   ];
 }
 
 /**
  * 前の月の年月を取得する
  */
-export function getPreviousMonth(year: number, month: number): { year: number; month: number } {
+export function getPreviousMonth(
+  year: number,
+  month: number
+): { year: number; month: number } {
   if (month === 0) {
     return { year: year - 1, month: 11 };
   }
@@ -163,7 +180,10 @@ export function getPreviousMonth(year: number, month: number): { year: number; m
 /**
  * 次の月の年月を取得する
  */
-export function getNextMonth(year: number, month: number): { year: number; month: number } {
+export function getNextMonth(
+  year: number,
+  month: number
+): { year: number; month: number } {
   if (month === 11) {
     return { year: year + 1, month: 0 };
   }

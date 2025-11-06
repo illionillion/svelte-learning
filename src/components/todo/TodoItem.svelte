@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Todo } from "../../utils/localStorageTodo";
+  import type { Todo } from '../../utils/localStorageTodo';
 
   export let todo: Todo;
   export let onToggle: (id: number) => void;

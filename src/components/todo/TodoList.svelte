@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TodoItem from "./TodoItem.svelte";
+  import TodoItem from './TodoItem.svelte';
   export let todos: { id: number; text: string; completed: boolean }[];
   export let onToggle: (id: number) => void;
   export let onRemove: (id: number) => void;
