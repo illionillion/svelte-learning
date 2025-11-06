@@ -32,7 +32,7 @@
 </script>
 
 <div class="layout">
-  <Header {currentPage} onToggleSidebar={toggleSidebar} />
+  <Header onToggleSidebar={toggleSidebar} />
   <Sidebar {currentPage} isOpen={isSidebarOpen} onClose={closeSidebar} />
   
   <main class="main-content" class:sidebar-open={isSidebarOpen}>
