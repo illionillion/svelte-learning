@@ -1,4 +1,5 @@
 <script lang="ts">
+  import './Sidebar.css';
   export let currentPage: string = '';
   export let isOpen: boolean = false;
   export let onClose: () => void;
@@ -74,7 +75,3 @@
     <p class="app-version">Svelte Learning v1.0</p>
   </div>
 </aside>
-
-<style>
-  @import './Sidebar.css';
-</style>
