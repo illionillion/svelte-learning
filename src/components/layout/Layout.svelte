@@ -1,4 +1,5 @@
 <script lang="ts">
+  import './Layout.css';
   import { onMount } from 'svelte';
   import Header from './Header.svelte';
   import Sidebar from './Sidebar.svelte';
@@ -39,29 +40,3 @@
     <slot />
   </main>
 </div>
-
-<style>
-  .layout {
-    min-height: 100vh;
-    position: relative;
-  }
-
-  .main-content {
-    margin-top: 60px; /* ヘッダーの高さ分 */
-    min-height: calc(100vh - 60px);
-    transition: margin-left 0.3s ease;
-  }
-
-  /* デスクトップでサイドバーが開いている時のメインコンテンツ調整 */
-  @media (min-width: 769px) {
-    .main-content.sidebar-open {
-      margin-left: 280px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .main-content.sidebar-open {
-      margin-left: 320px;
-    }
-  }
-</style>
