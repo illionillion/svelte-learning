@@ -2,8 +2,8 @@
   import type { Todo } from '../../utils/localStorageTodo';
 
   export let todo: Todo;
-  export let onToggle: (id: number) => void;
-  export let onRemove: (id: number) => void;
+  export let onToggle: (_id: number) => void;
+  export let onRemove: (_id: number) => void;
 </script>
 
 <li class="todo-item">

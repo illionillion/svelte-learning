@@ -76,14 +76,6 @@
     updateCalendar();
   }
 
-  // 今日の日付で初期化（非推奨、initializeFromParamsを使用）
-  function initializeCalendar() {
-    const today = new Date();
-    currentYear = today.getFullYear();
-    currentMonth = today.getMonth();
-    updateCalendar();
-  }
-
   // カレンダーを更新
   function updateCalendar() {
     weeks = generateCalendar(currentYear, currentMonth);

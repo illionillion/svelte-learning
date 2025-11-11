@@ -9,8 +9,8 @@
   export let currentMonth: number;
   export let onPreviousMonth: () => void;
   export let onNextMonth: () => void;
-  export let onYearChange: (year: number) => void;
-  export let onMonthChange: (month: number) => void;
+  export let onYearChange: (_year: number) => void;
+  export let onMonthChange: (_month: number) => void;
 
   const yearOptions = generateYearOptions();
   const monthOptions = generateMonthOptions();

@@ -1,7 +1,7 @@
 <script lang="ts">
   export let newTodo: string;
-  export let onInput: (e: Event) => void;
-  export let onAdd: (e: Event) => void;
+  export let onInput: (_e: Event) => void;
+  export let onAdd: (_e: Event) => void;
   export let onClear: () => void;
 </script>
 

@@ -1,9 +1,9 @@
 <script lang="ts">
   import './GameBoard.css';
-  import type { GameBoard, Player } from '../../utils/tictactoeUtils';
+  import type { GameBoard } from '../../utils/tictactoeUtils';
 
   export let board: GameBoard;
-  export let onCellClick: (row: number, col: number) => void;
+  export let onCellClick: (_row: number, _col: number) => void;
   export let isGameOver: boolean;
 </script>
 

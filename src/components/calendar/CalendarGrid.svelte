@@ -4,7 +4,7 @@
   import './CalendarGrid.css';
 
   export let weeks: CalendarDate[][];
-  export let onDateClick: (date: CalendarDate) => void = () => {};
+  export let onDateClick: (_date: CalendarDate) => void = () => {};
   export let selectedDate: CalendarDate | null = null;
 
   const dayNames = getDayNames();
