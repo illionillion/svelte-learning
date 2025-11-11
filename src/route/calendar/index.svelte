@@ -3,6 +3,7 @@
   import { params, push } from 'svelte-spa-router';
   import CalendarHeader from '../../components/calendar/CalendarHeader.svelte';
   import CalendarGrid from '../../components/calendar/CalendarGrid.svelte';
+  import MemoEditor from '../../components/calendar/MemoEditor.svelte';
   import Layout from '../../components/layout/Layout.svelte';
   import {
     generateCalendar,
@@ -22,7 +23,8 @@
   let currentYear: number;
   let currentMonth: number;
   let weeks: CalendarDate[][];
-  let selectedDate: CalendarDate | null = null; // URLを更新する関数
+  let selectedDate: CalendarDate | null = null;
+  let memoEditorTarget: CalendarDate | null = null; // URLを更新する関数
   function updateURL(year: number, month: number, day?: number) {
     const monthStr = String(month + 1).padStart(2, '0');
     let newPath = `/calendar/${year}/${monthStr}`;
@@ -137,6 +139,14 @@
       // 同じ月の日付がクリックされた場合
       updateURL(currentYear, currentMonth, date.date);
     }
+
+    // メモエディターを開く
+    memoEditorTarget = date;
+  }
+
+  // メモエディターを閉じる
+  function closeMemoEditor() {
+    memoEditorTarget = null;
   }
 
   // キーボードショートカット
@@ -213,19 +223,22 @@
         onMonthChange={handleMonthChange}
       />
 
-      <CalendarGrid {weeks} onDateClick={handleDateClick} />
+      <CalendarGrid {weeks} {selectedDate} onDateClick={handleDateClick} />
 
       {#if selectedDate}
         <div class="selected-date-info">
-          <h3>Selected Date</h3>
+          <h3>選択中の日付</h3>
           <p>
             {selectedDate.year}年 {selectedDate.month + 1}月 {selectedDate.date}日
             {#if selectedDate.isToday}
-              <span class="today-badge">Today</span>
+              <span class="today-badge">今日</span>
             {/if}
           </p>
+          <p class="memo-hint">日付をクリックしてメモを編集できます</p>
         </div>
       {/if}
+
+      <MemoEditor selectedDate={memoEditorTarget} onClose={closeMemoEditor} />
     </div>
 
     <div class="shortcuts">

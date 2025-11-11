@@ -65,6 +65,13 @@
   animation: pulse 2s infinite;
 }
 
+.memo-hint {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
 .shortcuts {
   margin-top: 1rem;
   padding: 1rem;
