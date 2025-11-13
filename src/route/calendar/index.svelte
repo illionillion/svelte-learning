@@ -139,6 +139,8 @@
   // メモエディターを閉じる
   function closeMemoEditor() {
     memoEditorTarget = null;
+    // メモの変更を反映するためにカレンダーを更新
+    updateCalendar();
   }
 
   // キーボードショートカット
