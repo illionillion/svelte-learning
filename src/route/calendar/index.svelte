@@ -155,8 +155,11 @@
         goToNextMonth();
         break;
       case 'Home':
+      case 't':
+      case 'T':
+        // ホームキーまたはTキーで今日の日付に戻る
+        // Macではfn+← または T キーを使用
         event.preventDefault();
-        // ホームキーで今日の日付に戻る
         const today = new Date();
         currentYear = today.getFullYear();
         currentMonth = today.getMonth();
@@ -237,7 +240,7 @@
 
     <div class="shortcuts">
       <p>
-        <strong>Shortcuts:</strong> ← Previous Month, → Next Month, Home = Today
+        <strong>Shortcuts:</strong> ← 前月, → 次月, T キーで今日へ
       </p>
     </div>
   </div>
